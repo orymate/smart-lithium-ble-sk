@@ -8,6 +8,8 @@ sudo python3 setup.py install
 sudo cp ble-sk.socket ble-sk@.service /etc/systemd/system/
 sudo cp env.example /etc/default/smart-lithium-ble-sk
 
+sudo adduser ble-sk --ingroup bluetooth --disabled-password
+
 # edit devices (see https://github.com/keshavdv/victron-ble/tree/main?tab=readme-ov-file#usage)
 sudo vim /etc/default/smart-lithium-ble-sk
 
