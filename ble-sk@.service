@@ -1,0 +1,20 @@
+[Unit]
+Description=SignalK LithiumSmart bridge
+Requires=ble-sk.socket
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/default/smart-lithium-ble-sk
+ExecStart=/usr/bin/python3 -m smart-lithium-ble-sk.cli signalk $SELF $DEVICES
+StandardInput=null
+StandardOutput=socket
+StandardError=journal
+TimeoutStopSec=5
+RuntimeMaxSec=86400
+DynamicUser=true
+User=ble-sk
+Group=bluetooth
+IgnoreSIGPIPE=false
+
+[Install]
+WantedBy=multi-user.target
