@@ -4,7 +4,7 @@
 # required changes to upstream: https://github.com/keshavdv/victron-ble/pull/47
 sudo pip install git+https://github.com/orymate/victron-ble.git@add-smart-lithium#egg=victron-ble
 
-sudo python3 setup.py install
+sudo pip install .  # or git+https://github.com/orymate/smart-lithium-ble-sk.git
 sudo cp ble-sk.socket ble-sk@.service /etc/systemd/system/
 sudo cp env.example /etc/default/smart-lithium-ble-sk
 

@@ -5,7 +5,7 @@ Requires=ble-sk.socket
 [Service]
 Type=simple
 EnvironmentFile=/etc/default/smart-lithium-ble-sk
-ExecStart=/usr/bin/python3 -m smart-lithium-ble-sk.cli signalk $SELF $DEVICES
+ExecStart=/usr/local/bin/smart_lithium_ble_sk signalk $SELF $DEVICES
 StandardInput=null
 StandardOutput=socket
 StandardError=journal

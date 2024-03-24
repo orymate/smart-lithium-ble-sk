@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 
 
 class SKScanner(Scanner):
-    def __init__(self, vesselid, device_keys: dict[str, str]=None):
+    def __init__(self, vesselid, device_keys: dict[str, str] = None):
         self.vesselid = vesselid
         super().__init__(device_keys)
 
