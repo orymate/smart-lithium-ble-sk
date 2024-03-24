@@ -5,18 +5,20 @@ from typing import List, Tuple
 
 import click
 
-from .scanner import SKScanner
 from victron_ble.cli import DeviceKeyParam
+from .scanner import SKScanner
 
 logger = logging.getLogger("victron_ble_sk")
 logging.basicConfig()
 
 signal.signal(signal.SIGPIPE, signal.SIG_DFL)
 
+
 @click.group()
 @click.option("-v", "--verbose", is_flag=True, help="Increase logging output")
 def cli(verbose):
     logger.setLevel(logging.DEBUG if verbose else logging.INFO)
+
 
 @cli.command(help="Forward data to signalk")
 @click.argument("vesselid", type=str)
@@ -35,6 +37,7 @@ def signalk(vesselid: str, device_keys: List[Tuple[str, str]]):
 
     asyncio.ensure_future(scan({k: v for k, v in device_keys}))
     loop.run_forever()
+
 
 if __name__ == "__main__":
     cli()
