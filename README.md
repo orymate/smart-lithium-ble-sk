@@ -25,3 +25,9 @@ systemctl status ble-sk@\*.service
 systemctl status ble-sk.socket
 
 ```
+
+## NodeRed dashboard example
+
+![image](https://github.com/orymate/smart-lithium-ble-sk/assets/207816/9a06fa2c-c885-4ae9-9e86-0665e4f839e8)
+![image](https://github.com/orymate/smart-lithium-ble-sk/assets/207816/71d12300-6618-4742-ab38-915aa8f27a31)
+[flows.1.json](https://github.com/orymate/smart-lithium-ble-sk/files/14734864/flows.1.json)
